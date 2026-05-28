@@ -19,21 +19,18 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: ./myapp
 
       - name: Run tests
         run: npm test
-        working-directory: ./myapp
 
       - name: Build project
         run: npm run build
-        working-directory: ./myapp
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./myapp/dist
+          publish_dir: ./dist
 
 
 
